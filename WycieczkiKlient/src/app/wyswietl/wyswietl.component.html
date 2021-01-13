@@ -1,0 +1,48 @@
+<div *ngFor="let wycieczki of listaWycieczek">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Początek trasy:</span>
+    </div>
+    <input type="text" value={{wycieczki.poczatekTrasy}} class="form-control">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Koniec trasy:</span>
+    </div>
+    <input type="text" value={{wycieczki.konieTrasy}} class="form-control">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Data wycieczki:</span>
+    </div>
+    <input type="text" value={{wycieczki.dataWycieczki}} class="form-control">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Pokonany dystans:</span>
+    </div>
+    <input type="text" value={{wycieczki.pokonanyDystans}} class="form-control">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Liczba dni:</span>
+    </div>
+    <input type="text" value={{wycieczki.liczbaDni}} class="form-control">
+  </div>
+  <div *ngIf="wycieczki.zdjecie" class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Podgląd zdjęcia:</span>
+    </div>
+    <img class="img_size" src={{wycieczki.zdjecie}}>
+  </div>
+  <div  *ngIf="wycieczki.video" class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="">Podgląd filmu:</span>
+    </div>
+    <video class="video_size" src={{wycieczki.video}} autoplay onloadedmetadata="this.muted = true"
+      oncanplay="this.play()">
+      <source type="video/mp4">
+    </video>
+  </div>
+  <br>
+</div>

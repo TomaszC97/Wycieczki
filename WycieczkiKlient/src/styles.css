@@ -1,0 +1,21 @@
+.input-group{
+  width: 600px;
+}
+
+.input-group-text{
+  width: 200px;
+}
+
+.btn-secondary{
+  width: 200px;
+}
+
+.video_size{
+  width: 300px;
+  height: 200px;
+}
+
+.img_size{
+  width: 400px;
+  height: 200px;
+}

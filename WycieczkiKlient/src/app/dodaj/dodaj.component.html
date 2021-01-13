@@ -1,0 +1,68 @@
+<form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+  <div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Początek trasy:</span>
+      </div>
+      <input type="text" class="form-control" formControlName="poczatekTrasy">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Koniec trasy:</span>
+      </div>
+      <input type="text" class="form-control" formControlName="konieTrasy">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Data wycieczki:</span>
+      </div>
+      <input type="text" class="form-control" formControlName="dataWycieczki">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Pokonany dystans:</span>
+      </div>
+      <input type="text" class="form-control" formControlName="pokonanyDystans">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Liczba dni:</span>
+      </div>
+      <input type="text" class="form-control" formControlName="liczbaDni">
+    </div>
+    <div *ngIf="imageUrl"  class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Podgląd zdjęcia:</span>
+      </div>
+      <img class="img_size" [src]="imageUrl">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Dodaj URL zdjęcia:</span>
+      </div>
+      <input type="text" class="form-control" (change)="imgShow()" formControlName="zdjecie">
+    </div>
+    <div *ngIf="videoUrl"  class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Pogdląd filmu:</span>
+      </div>
+        <video class="video_size" [src]="videoUrl" autoplay onloadedmetadata="this.muted = true"
+        oncanplay="this.play()">
+        <source type="video/mp4">
+      </video>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Dodaj URL video:</span>
+      </div>
+      <input type="text" class="form-control" (change)="videoShow()" formControlName="video">
+    </div>
+    <br>
+    <div class="form-group col-md-8 offset-md-2">
+      <button type="submit" class="btn btn-secondary">Zapisz</button>
+    </div>
+  </div>
+</form>
+
+
+
